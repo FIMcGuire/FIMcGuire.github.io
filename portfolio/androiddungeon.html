@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fraser McGuire</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="icon" type="image/png" href="/images/logo.png">
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="/index.html" class="logo">
+									<span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title">Fraser McGuire</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/portfolio/project-template.html">About Me</a></li>
+							<li><a href="/portfolio/project-template.html">Repositories</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Android Dungeon</h1>
+							<span class="image main"><img src="/images/AndroidDungeonPoster.jpg" alt="Banner image of cropped poster submitted alongside project." /></span>
+							<p>
+                                Android Dungeon was developed as my main deliverable for my honours project. The project's aim was to research virtual tabletops and their impact on player immersion whilst playing tabletop role-playing games. After research and review, the application was developed in Unity with the aim to create an Android based virtual tabletop and to then try to measure player immersion during use of the application, alongside other virtual tabletop applications, as well as without using a virtual tabletop. The global pandemic prevented this testing from happening, and so evaluation was instead carried out on the design and usability of the developed application.
+                            </p>
+							<p>
+                                This was my first experience developing in Unity, as well as my first experience developing a multi-player application. The most complicated scripts were those that dealt with network code. The following two methods were used for spawning in an instance of a monster token on the tabletop:
+                            </p>
+                            <pre>
+                                <code>//Method to spawn a monster
+[Command]
+private void cmdSpawnNPC()
+{
+    Vector3 mouseWorldPosition = Utils.GetMouseWorldPosition();
+    pathfinding.GetGrid().GetXY(mouseWorldPosition, out int x, out int y);
+
+    if (x >= 0 &amp;&amp; y >= 0)
+    {
+        Vector3 cellPos = new Vector3(x, y) * pathfinding.GetGrid().GetCellSize() + Vector3.one * pathfinding.GetGrid().GetCellSize() * .5f;
+        cellPos.z = 0;
+
+        //instantiate player prefab at current spawnpoint location and then tie it to client connection
+        var monsterInstance = Instantiate(monsterPrefab, cellPos, Quaternion.identity);
+        monsterInstance.GetComponent&lt;SpriteRenderer&gt;().sprite = monsterSprite;
+        monsterInstance.name = monsterName + "/" + monsterCounter;
+        monsterInstance.transform.localScale = new Vector3(pathfinding.GetGrid().GetCellSize() / 5, pathfinding.GetGrid().GetCellSize() / 5, 1);
+        NetworkServer.Spawn(monsterInstance, connectionToClient);
+        monsterInstance.layer = 9;
+
+        CmdAddToInitList(monsterInstance, monsterInitiative);
+
+        RpcUpdateMonster(monsterInstance, monsterName, monsterCounter);
+
+        monsterCounter++;
+    }
+}
+//Method to update a monster on all clients
+[ClientRpc]
+void RpcUpdateMonster(GameObject monster, string monsterName, int monsterCounter)
+{
+    switch (monsterName)
+    {
+        case "Goblin":
+            monsterSprite = monsterSprites[0];
+            break;
+        case "Bugbear":
+            monsterSprite = monsterSprites[1];
+            break;
+        case "Bandit":
+            monsterSprite = monsterSprites[2];
+            break;
+        case "Bandit2":
+            monsterSprite = monsterSprites[3];
+            break;
+        case "Wolf":
+            monsterSprite = monsterSprites[4];
+            break;
+        case "Mimic":
+            monsterSprite = monsterSprites[5];
+            break;
+    }
+    monster.name = monsterName + "/" + monsterCounter;
+    monster.GetComponent&lt;SpriteRenderer&gt;().sprite = monsterSprite;
+}</code>
+                            </pre>
+                            <p>
+                                The method "cmdSpawnNPC()" is responsible for the instantiation of a premade monster token and setting its position and appearance. Next, the "RpcUpdateMonster()" method is run on all connected clients and sets the appearance of the newly added token in their own instance of the game. This was necessary as even though the first method is a command run on the server, it does not update each connected client's instance of the newly spawned monster token. There are other ways in which to achieve the same outcome, however, due to time constraints and at the time, my limited understanding of Unity networking, this system was chosen and can be seen in other scrips within the project.
+                            </p>
+                            <p>
+                                The full Unity project can be found on my GitHub <a href="https://github.com/FIMcGuire/androiddungeon-honours-project-unity"><b>here</b></a>. The development report associated with this project can be downloaded <a href="/downloads/Development%20Report.pdf" download><b>here</b></a>.
+                            </p>
+                            <h2>Development Screenshots</h2>
+                            <div class="box alt">
+				                <div class="row gtr-uniform">
+                                    <div class="col-3"><span class="image fit"><img src="/images/ADCharacterCreate.jpg" alt="" /></span></div>
+                                    <div class="col-9"><span class="image fit"><img src="/images/ADFoV.jpg" alt="" /></span></div>
+                                    <div class="col-9"><span class="image fit"><img src="/images/ADDevScreenshot.jpg" alt="" /></span></div>
+                                    <div class="col-3"><span class="image fit"><img src="/images/ADCharacterSheet.jpg" alt="" /></span></div>
+				                </div>
+				            </div>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Contact Me</h2>
+								<ul class="icons">
+                                    <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                    <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								</ul>
+							</section>
+                            <ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
