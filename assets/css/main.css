@@ -2580,7 +2580,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
+		position: relative;
 		margin: -2.5em 0 0 -2.5em;
 	}
 
@@ -2645,7 +2645,7 @@ input, select, textarea {
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 100% 100%;
-					opacity: 0.25;
+					opacity: 1;
 					z-index: 2;
 				}
 
@@ -2745,7 +2745,7 @@ input, select, textarea {
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 					background-color: #444440;
-					opacity: 0.35;
+					opacity: 0;
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -2754,7 +2754,7 @@ input, select, textarea {
 
 			body:not(.is-touch) .tiles article:hover .content {
 				max-height: 15em;
-				opacity: 0.35;
+				opacity: 0.8;
 			}
 
 		* + .tiles {
@@ -2771,7 +2771,7 @@ input, select, textarea {
 
 		body.is-touch .tiles article .content {
 			max-height: 15em;
-			opacity: 0.35;
+			opacity: 0.8;
 		}
 
 		@media screen and (max-width: 1280px) {
