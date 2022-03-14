@@ -1,4 +1,0 @@
-I am a recent Creative Computing graduate (2:1), with a passion for programming and problem solving. I work well as part of a team, can work to deadlines, and do well under pressure. My hobbies include; photography, walking, and writing.
-
-During my time at university, I worked on various projects that were spread across multiple disciplines. Through these projects, most of which can be found on my portfolio, I learned a variety of skills. I have developed many Android applications, 
-which has given me a fair knowledge of both the Android platform and Java. I have worked on micro-controllers such as Arduino and Photon, learning to integrate their code with that of an Android application. My coursework included Web Design and Database management, alongside UX disciplines, including Data visualisation techniques and practices, and how to structure a UX Evaluation.
