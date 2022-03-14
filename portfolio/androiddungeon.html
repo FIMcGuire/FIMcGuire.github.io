@@ -1,63 +1,95 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Fraser McGuire</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-        <link rel="icon" type="image/png" href="/images/logo.png">
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <head>
+    <title>Fraser McGuire</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="/index.html" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span
+            ><span class="title" style="letter-spacing: 0.2em"
+              >Fraser McGuire<br />
+              <p style="font-size: 10pt; margin: 0; letter-spacing: 0.2em">
+                Programmer - Problem Solver
+              </p></span
+            >
+          </a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-							<!-- Logo -->
-								<a href="/index.html" class="logo">
-                                    <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title" style="letter-spacing: .2em">Fraser McGuire<br><p style="font-size: 10pt; margin: 0; letter-spacing: .2em">Programmer - Problem Solver</p></span>
-								</a>
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/aboutme.html">About Me</a></li>
+          <li>
+            <a
+              href="https://github.com/FIMcGuire?tab=repositories"
+              target="_blank"
+              >Repositories</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="/index.html">Home</a></li>
-							<li><a href="/aboutme.html">About Me</a></li>
-							<li><a href="https://github.com/FIMcGuire?tab=repositories" target="_blank">Repositories</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Android Dungeon</h1>
-							<span class="image main"><img src="/images/AndroidDungeonPoster.jpg" alt="Banner image of cropped poster submitted alongside project." /></span>
-							<p>
-                                Android Dungeon was developed as my main deliverable for my honours project. The project's aim was to research virtual tabletops and their impact on player immersion whilst playing tabletop role-playing games. After research and review, the application was developed in Unity with the aim to create an Android based virtual tabletop and to then try to measure player immersion during use of the application, alongside other virtual tabletop applications, as well as without using a virtual tabletop. The global pandemic prevented this testing from happening, and so evaluation was instead carried out on the design and usability of the developed application.
-                            </p>
-							<p>
-                                This was my first experience developing in Unity, as well as my first experience developing a multi-player application. The most complicated scripts were those that dealt with network code. The following two methods were used for spawning in an instance of a monster token on the tabletop:
-                            </p>
-                            <pre>
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>Android Dungeon</h1>
+          <span class="image main"
+            ><img
+              src="/images/AndroidDungeonPoster.jpg"
+              alt="Banner image of cropped poster submitted alongside project."
+          /></span>
+          <p>
+            Android Dungeon was developed as my main deliverable for my honours
+            project. The project's aim was to research virtual tabletops and
+            their impact on player immersion whilst playing tabletop
+            role-playing games. After research and review, the application was
+            developed in Unity with the aim to create an Android based virtual
+            tabletop and to then try to measure player immersion during use of
+            the application, alongside other virtual tabletop applications, as
+            well as without using a virtual tabletop. The global pandemic
+            prevented this testing from happening, and so evaluation was instead
+            carried out on the design and usability of the developed
+            application.
+          </p>
+          <p>
+            This was my first experience developing in Unity, as well as my
+            first experience developing a multi-player application. The most
+            complicated scripts were those that dealt with network code. The
+            following two methods were used for spawning in an instance of a
+            monster token on the tabletop:
+          </p>
+          <pre>
                                 <code>//Method to spawn a monster
 [Command]
 private void cmdSpawnNPC()
@@ -114,50 +146,110 @@ void RpcUpdateMonster(GameObject monster, string monsterName, int monsterCounter
     monster.GetComponent&lt;SpriteRenderer&gt;().sprite = monsterSprite;
 }</code>
                             </pre>
-                            <p>
-                                The method "cmdSpawnNPC()" is responsible for the instantiation of a premade monster token and setting its position and appearance. Next, the "RpcUpdateMonster()" method is run on all connected clients and sets the appearance of the newly added token in their own instance of the game. This was necessary as even though the first method is a command run on the server, it does not update each connected client's instance of the newly spawned monster token. There are other ways in which to achieve the same outcome, however, due to time constraints and at the time, my limited understanding of Unity networking, this system was chosen and can be seen in other scrips within the project.
-                            </p>
-                            <p>
-                                The full Unity project can be found on my <a href="https://github.com/FIMcGuire/androiddungeon-honours-project-unity" target="_blank"><b>GitHub</b></a>. The development report associated with this project can be downloaded <a href="/downloads/Development%20Report.pdf" download="FraserMcGuire-HonoursDevelopmentReport"><b>here</b></a>.
-                            </p>
-                            <h2>Development Screenshots</h2>
-                            <div class="box alt">
-				                <div class="row gtr-uniform">
-                                    <div class="col-3"><span class="image fit"><img src="/images/ADCharacterCreate.jpg" alt="" /></span></div>
-                                    <div class="col-9"><span class="image fit"><img src="/images/ADFoV.jpg" alt="" /></span></div>
-                                    <div class="col-9"><span class="image fit"><img src="/images/ADDevScreenshot.jpg" alt="" /></span></div>
-                                    <div class="col-3"><span class="image fit"><img src="/images/ADCharacterSheet.jpg" alt="" /></span></div>
-				                </div>
-				            </div>
-						</div>
-					</div>
+          <p>
+            The method "cmdSpawnNPC()" is responsible for the instantiation of a
+            premade monster token and setting its position and appearance. Next,
+            the "RpcUpdateMonster()" method is run on all connected clients and
+            sets the appearance of the newly added token in their own instance
+            of the game. This was necessary as even though the first method is a
+            command run on the server, it does not update each connected
+            client's instance of the newly spawned monster token. There are
+            other ways in which to achieve the same outcome, however, due to
+            time constraints and at the time, my limited understanding of Unity
+            networking, this system was chosen and can be seen in other scrips
+            within the project.
+          </p>
+          <p>
+            The full Unity project can be found on my
+            <a
+              href="https://github.com/FIMcGuire/androiddungeon-honours-project-unity"
+              target="_blank"
+              ><b>GitHub</b></a
+            >. The development report associated with this project can be
+            downloaded
+            <a
+              href="/downloads/Development%20Report.pdf"
+              download="FraserMcGuire-HonoursDevelopmentReport"
+              ><b>here</b></a
+            >.
+          </p>
+          <h2>Development Screenshots</h2>
+          <div class="box alt">
+            <div class="row gtr-uniform">
+              <div class="col-3">
+                <span class="image fit"
+                  ><img src="/images/ADCharacterCreate.jpg" alt=""
+                /></span>
+              </div>
+              <div class="col-9">
+                <span class="image fit"
+                  ><img src="/images/ADFoV.jpg" alt=""
+                /></span>
+              </div>
+              <div class="col-9">
+                <span class="image fit"
+                  ><img src="/images/ADDevScreenshot.jpg" alt=""
+                /></span>
+              </div>
+              <div class="col-3">
+                <span class="image fit"
+                  ><img src="/images/ADCharacterSheet.jpg" alt=""
+                /></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Contact Me</h2>
-								<ul class="icons">
-                                    <li><a href="https://github.com/FIMcGuire" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://linkedin.com/in/fimcguire" target="_blank" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                                    <li><a href="mailto: fraser.mcguire123@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-									<li><a href="tel:07368306005" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-								</ul>
-							</section>
-                            <ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Contact Me</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="https://github.com/FIMcGuire"
+                  target="_blank"
+                  class="icon brands style2 fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/fimcguire"
+                  target="_blank"
+                  class="icon brands style2 fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto: fraser.mcguire123@outlook.com"
+                  class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a href="tel:07368306005" class="icon solid style2 fa-phone"
+                  ><span class="label">Phone</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

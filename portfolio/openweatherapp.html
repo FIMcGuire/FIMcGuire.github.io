@@ -1,72 +1,129 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <!--
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Fraser McGuire</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-        <link rel="icon" type="image/png" href="/images/logo.png">
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+  <head>
+    <title>Fraser McGuire</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="/index.html" class="logo">
+            <span class="symbol"><img src="/images/logo.svg" alt="" /></span
+            ><span class="title" style="letter-spacing: 0.2em"
+              >Fraser McGuire<br />
+              <p style="font-size: 10pt; margin: 0; letter-spacing: 0.2em">
+                Programmer - Problem Solver
+              </p></span
+            >
+          </a>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
 
-							<!-- Logo -->
-								<a href="/index.html" class="logo">
-                                    <span class="symbol"><img src="/images/logo.svg" alt="" /></span><span class="title" style="letter-spacing: .2em">Fraser McGuire<br><p style="font-size: 10pt; margin: 0; letter-spacing: .2em">Programmer - Problem Solver</p></span>
-								</a>
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/aboutme.html">About Me</a></li>
+          <li>
+            <a
+              href="https://github.com/FIMcGuire?tab=repositories"
+              target="_blank"
+              >Repositories</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="/index.html">Home</a></li>
-							<li><a href="/aboutme.html">About Me</a></li>
-							<li><a href="https://github.com/FIMcGuire?tab=repositories" target="_blank">Repositories</a></li>
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>OpenWeather App Mk2</h1>
-							<span class="image main"><img src="/images/OWMPoster.jpg" alt="Banner image of cropped poster submitted alongside project." /></span>
-							<p>
-                                OpenWeather App Mk2 is a weather forecast application for Android, developed using one of OpenWeather’s APIs. The original application was developed during my second year of University, for a course called Mobile Applications Development, and was my first experience coding in Java and for Android. The original brief was to study what Android applications already exist and then to create one ourselves. I chose to create a weather application because I thought it would be a good challenge but not beyond my abilities at the time.
-                            </p>
-                            <h2>Mk1</h2>
-							<p>
-                                <span class="image right"><img src="/images/OWM1.jpg" alt="" height="250em"/></span>
-                                The first version of the app uses OpenWeather’s Current Weather API to get location based weather data from either a town/city name or via GPS coordinates. The application downloads the weather data as a JSON file and then inputs the downloaded data into textviews to display the information to the user. Users can save locations by long-pressing the save button and then access these locations by short-pressing the same button. These saved locations are displayed as text views on a linear layout, and clicking one will return to the main screen and send an API call for said location. The background is faily dynamic and consists of two layers, a cloud layer and a background colour. In the data retrieved from the API call, is a cloud cover percentage value, which is used by the app to select one of several premade cloudy backgrounds.
-                            </p>
-                            <h2>Mk2</h2>
-                            <p>
-                                <span class="image right"><img src="/images/OWM2.jpg" alt="" height="250em"/></span>
-                                The second version of the app uses OpenWeather’s Current Weather and One Call API. The One Call API allows for current, hourly, and daily forecast data, however, only works via GPS coordinates. To get around this, I used the Current Weather API call to get GPS coordinates for a given town/city name. Whilst this method works, it is not very efficient. The application now uses a drawer activity and fragment container system to switch between forecast modes. The GPS and SAVE buttons were changed to floating action buttons in order to persist through each forecast mode. This new structure allows for easier data transfer between forecast modes, as the drawer activity holds code needed by all three modes, such as the API calls, and each fragment has code specific to its needs. The only downgrade from Mk1 to Mk2 has been the design. I was expected to enhance the design as well as the functionality of the application, and got carried away with the orange and blue contrasting theme. The new look is garish and a little offputing, and would be the first thing to change if I were to make a Mk3.
-                            </p>
-                            <h2>New Code</h2>
-                            <h3>onNavigationItemSelected() and fragmentManager()</h3>
-                            <pre>
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>OpenWeather App Mk2</h1>
+          <span class="image main"
+            ><img
+              src="/images/OWMPoster.jpg"
+              alt="Banner image of cropped poster submitted alongside project."
+          /></span>
+          <p>
+            OpenWeather App Mk2 is a weather forecast application for Android,
+            developed using one of OpenWeather’s APIs. The original application
+            was developed during my second year of University, for a course
+            called Mobile Applications Development, and was my first experience
+            coding in Java and for Android. The original brief was to study what
+            Android applications already exist and then to create one ourselves.
+            I chose to create a weather application because I thought it would
+            be a good challenge but not beyond my abilities at the time.
+          </p>
+          <h2>Mk1</h2>
+          <p>
+            <span class="image right"
+              ><img src="/images/OWM1.jpg" alt="" height="250em"
+            /></span>
+            The first version of the app uses OpenWeather’s Current Weather API
+            to get location based weather data from either a town/city name or
+            via GPS coordinates. The application downloads the weather data as a
+            JSON file and then inputs the downloaded data into textviews to
+            display the information to the user. Users can save locations by
+            long-pressing the save button and then access these locations by
+            short-pressing the same button. These saved locations are displayed
+            as text views on a linear layout, and clicking one will return to
+            the main screen and send an API call for said location. The
+            background is faily dynamic and consists of two layers, a cloud
+            layer and a background colour. In the data retrieved from the API
+            call, is a cloud cover percentage value, which is used by the app to
+            select one of several premade cloudy backgrounds.
+          </p>
+          <h2>Mk2</h2>
+          <p>
+            <span class="image right"
+              ><img src="/images/OWM2.jpg" alt="" height="250em"
+            /></span>
+            The second version of the app uses OpenWeather’s Current Weather and
+            One Call API. The One Call API allows for current, hourly, and daily
+            forecast data, however, only works via GPS coordinates. To get
+            around this, I used the Current Weather API call to get GPS
+            coordinates for a given town/city name. Whilst this method works, it
+            is not very efficient. The application now uses a drawer activity
+            and fragment container system to switch between forecast modes. The
+            GPS and SAVE buttons were changed to floating action buttons in
+            order to persist through each forecast mode. This new structure
+            allows for easier data transfer between forecast modes, as the
+            drawer activity holds code needed by all three modes, such as the
+            API calls, and each fragment has code specific to its needs. The
+            only downgrade from Mk1 to Mk2 has been the design. I was expected
+            to enhance the design as well as the functionality of the
+            application, and got carried away with the orange and blue
+            contrasting theme. The new look is garish and a little offputing,
+            and would be the first thing to change if I were to make a Mk3.
+          </p>
+          <h2>New Code</h2>
+          <h3>onNavigationItemSelected() and fragmentManager()</h3>
+          <pre>
                                 <code>//method to determine which nav option was selected
 @Override
 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -105,11 +162,19 @@ public void fragmentManager(String tag, Fragment fragment) {
       getSupportActionBar().setTitle(tag + " Forecast");
 }</code>
                             </pre>
-                            <p>
-                                These two methods are used to determine which drawer item was selected and then what to do. If one of the three forecast modes are selected, then the method fragmentManager() is called, sending two parameters: a string “tag” and an instance of each fragment. The method then sets up a fragment transaction, and replaces the currently held fragment with the given new fragment. If the selected drawer item is not a forecast mode, i.e. a saved location, the string value of this item is sent to the method taskLoadUp() which triggers an API call.
-                            </p>
-                            <h3>onPostExecute()</h3>
-                            <pre>
+          <p>
+            These two methods are used to determine which drawer item was
+            selected and then what to do. If one of the three forecast modes are
+            selected, then the method fragmentManager() is called, sending two
+            parameters: a string “tag” and an instance of each fragment. The
+            method then sets up a fragment transaction, and replaces the
+            currently held fragment with the given new fragment. If the selected
+            drawer item is not a forecast mode, i.e. a saved location, the
+            string value of this item is sent to the method taskLoadUp() which
+            triggers an API call.
+          </p>
+          <h3>onPostExecute()</h3>
+          <pre>
                                 <code>@Override
 protected void onPostExecute(String[] xml) {
       setCity(xml[1]);
@@ -124,11 +189,19 @@ protected void onPostExecute(String[] xml) {
                 dailyFragment.unPackJSON(xml[0], xml[1]);
 }</code>
                             </pre>
-                            <p>
-                                This is the final method run by the custom class called DownloadWeather, which extends the Async Task class, and runs in the background as to not interrupt the UI thread. The method must determine which fragment is currently held in the fragment container. Due to the differences in each fragment, this method must determine which class’ version of the unPackJSON() method to run. The parameters send to unPackJSON() are string values stored in the array “xml”. These strings store the JSON data and the name of the town/city.
-                            </p>
-                            <h3>unPackJSON()</h3>
-                            <pre>
+          <p>
+            This is the final method run by the custom class called
+            DownloadWeather, which extends the Async Task class, and runs in the
+            background as to not interrupt the UI thread. The method must
+            determine which fragment is currently held in the fragment
+            container. Due to the differences in each fragment, this method must
+            determine which class’ version of the unPackJSON() method to run.
+            The parameters send to unPackJSON() are string values stored in the
+            array “xml”. These strings store the JSON data and the name of the
+            town/city.
+          </p>
+          <h3>unPackJSON()</h3>
+          <pre>
                                 <code>public void unPackJSON(String xml, String cityName) {
       try {
             //create new JSONObject from xml
@@ -185,43 +258,88 @@ protected void onPostExecute(String[] xml) {
  
 }</code>
                             </pre>
-                            <p>
-                                This is the Hourly fragments version of the unPackJSON() method. The first thing each method does, is convert the string which holds the JSON file into a JSONObject. Once this has been done, the data is gathered from specific sections of the JSON file and then added to global arrays inside a for loop. Once the loop has completed, a method is called which then updates the values within the recycler view.
-                            </p>
-                            <h2>Improvements for Mk3</h2>
-                            <p>
-                                If there were to be a third version of this application, it would have to solve a number of issues present in Mk2. First and foremost would be the design, a transition away from the harsh contrast of blue and orange, potentially back to the more basic look of Mk1. Secondly, the API calls would have to be simplified, as having to call from two separate APIs just for app functionality is inefficient. Lastly, unifying similar code elements, such as the unPackJSON() methods, would also increase efficiency. Less important improvements might include changing the cloudy background images to be non-static, i.e. a procedural animated background.
-                            </p>
-                            <p>The full Android project can be found on my <a href="https://github.com/FIMcGuire/openweather-api-app-mk2" target="_blank"><b>GitHub</b></a>.</p>
-						</div>
-					</div>
+          <p>
+            This is the Hourly fragments version of the unPackJSON() method. The
+            first thing each method does, is convert the string which holds the
+            JSON file into a JSONObject. Once this has been done, the data is
+            gathered from specific sections of the JSON file and then added to
+            global arrays inside a for loop. Once the loop has completed, a
+            method is called which then updates the values within the recycler
+            view.
+          </p>
+          <h2>Improvements for Mk3</h2>
+          <p>
+            If there were to be a third version of this application, it would
+            have to solve a number of issues present in Mk2. First and foremost
+            would be the design, a transition away from the harsh contrast of
+            blue and orange, potentially back to the more basic look of Mk1.
+            Secondly, the API calls would have to be simplified, as having to
+            call from two separate APIs just for app functionality is
+            inefficient. Lastly, unifying similar code elements, such as the
+            unPackJSON() methods, would also increase efficiency. Less important
+            improvements might include changing the cloudy background images to
+            be non-static, i.e. a procedural animated background.
+          </p>
+          <p>
+            The full Android project can be found on my
+            <a
+              href="https://github.com/FIMcGuire/openweather-api-app-mk2"
+              target="_blank"
+              ><b>GitHub</b></a
+            >.
+          </p>
+        </div>
+      </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Contact Me</h2>
-								<ul class="icons">
-                                    <li><a href="https://github.com/FIMcGuire" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://linkedin.com/in/fimcguire" target="_blank" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                                    <li><a href="mailto: fraser.mcguire123@outlook.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-									<li><a href="tel:07368306005" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-								</ul>
-							</section>
-                            <ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Contact Me</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="https://github.com/FIMcGuire"
+                  target="_blank"
+                  class="icon brands style2 fa-github"
+                  ><span class="label">GitHub</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/fimcguire"
+                  target="_blank"
+                  class="icon brands style2 fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto: fraser.mcguire123@outlook.com"
+                  class="icon solid style2 fa-envelope"
+                  ><span class="label">Email</span></a
+                >
+              </li>
+              <li>
+                <a href="tel:07368306005" class="icon solid style2 fa-phone"
+                  ><span class="label">Phone</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/browser.min.js"></script>
-			<script src="/assets/js/breakpoints.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<script src="/assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>
